@@ -1,12 +1,12 @@
 # manifests/init.pp
 
-class iis() {
+class iis_service() {
 
   # Defaults
   File { source_permissions => ignore }
 
   # Requires Microsoft.Net to be installed
-  include iis::microsoftnet
+  include iis_service::microsoftnet
 
   # Windows Activation Service
   dism {'WAS-WindowsActivationService':
@@ -24,20 +24,20 @@ class iis() {
   }
 
   # Sub sections of IIS config
-  include iis::common
-  include iis::health
-  include iis::performance
-  include iis::security
-  include iis::appdev
-  include iis::management
+  include iis_service::common
+  include iis_service::health
+  include iis_service::performance
+  include iis_service::security
+  include iis_service::appdev
+  include iis_service::management
 
   # ensure that web server is installed before we try and activate included modules
-  Dism['IIS-WebServer'] -> Class['iis::common']
-  Dism['IIS-WebServer'] -> Class['iis::health']
-  Dism['IIS-WebServer'] -> Class['iis::performance']
-  Dism['IIS-WebServer'] -> Class['iis::security']
-  Dism['IIS-WebServer'] -> Class['iis::appdev']
-  Dism['IIS-WebServer'] -> Class['iis::management']
+  Dism['IIS-WebServer'] -> Class['iis_service::common']
+  Dism['IIS-WebServer'] -> Class['iis_service::health']
+  Dism['IIS-WebServer'] -> Class['iis_service::performance']
+  Dism['IIS-WebServer'] -> Class['iis_service::security']
+  Dism['IIS-WebServer'] -> Class['iis_service::appdev']
+  Dism['IIS-WebServer'] -> Class['iis_service::management']
 
   # Disable FTP
   dism {'IIS-FTPServer':
@@ -47,6 +47,6 @@ class iis() {
 
   # WCF
   include progresso::iis::wcf
-  Dism['WAS-WindowsActivationService'] -> Class['iis::wcf']
+  Dism['WAS-WindowsActivationService'] -> Class['iis_service::wcf']
 
 }

@@ -1,6 +1,6 @@
 # manifests/performance.pp
 
-class iis::performance {
+class iis_service::performance {
   dism {'IIS-Performance':
     ensure => present
   } ->

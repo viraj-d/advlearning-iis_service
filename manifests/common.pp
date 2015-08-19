@@ -1,6 +1,6 @@
 # manifests/common.pp
 
-class iis::common {
+class iis_service::common {
   dism {'IIS-CommonHttpFeatures':
     ensure => present
   }

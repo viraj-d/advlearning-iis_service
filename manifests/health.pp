@@ -1,6 +1,6 @@
 # manifests/health.pp
 
-class iis::health {
+class iis_service::health {
   dism {'IIS-HealthAndDiagnostics':
     ensure => present
   }

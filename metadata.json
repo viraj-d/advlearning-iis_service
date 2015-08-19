@@ -1,12 +1,12 @@
 {
-  "name": "advlearning-iis",
-  "version": "1.0.0",
+  "name": "advlearning-iis_service",
+  "version": "1.0.1",
   "author": "Martin Reynolds",
   "summary": "Install the production ready IIS",
   "license": "Apache License, Version 2.0",
-  "source": "https://github.com/AdvancedLearning/advlearning-iis",
-  "project_page": "https://github.com/AdvancedLearning/advlearning-iis",
-  "issues_url": "https://github.com/AdvancedLearning/advlearning-iis/issues",
+  "source": "https://github.com/AdvancedLearning/advlearning-iis_service",
+  "project_page": "https://github.com/AdvancedLearning/advlearning-iis_service",
+  "issues_url": "https://github.com/AdvancedLearning/advlearning-iis_service/issues",
   "types": [],
   "description": "Install IIS (using DISM)",
   "dependencies": [
