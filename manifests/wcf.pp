@@ -1,6 +1,6 @@
 # manifests/wcf.pp
 
-class iis::wcf {
+class iis_service::wcf {
   # WCF HTTP Activation (required by API sites)
   dism {'WAS-ProcessModel':
     ensure  => present

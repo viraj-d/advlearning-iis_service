@@ -1,6 +1,6 @@
 # manifests/security.pp
 
-class iis::security {
+class iis_service::security {
   dism {'IIS-Security':
     ensure => present
   } ->

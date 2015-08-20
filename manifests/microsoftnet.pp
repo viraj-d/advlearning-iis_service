@@ -1,6 +1,6 @@
 # manifests/microsoftnet.pp
 
-class iis::microsoftnet {
+class iis_service::microsoftnet {
 
   # .Net 3.5
   dism { 'NetFx3ServerFeatures':

@@ -1,6 +1,6 @@
 # manifests/management.pp
 
-class iis::management {
+class iis_service::management {
   # IIS Management console
   dism {'IIS-ManagementConsole':
     ensure => present

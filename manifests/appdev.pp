@@ -1,6 +1,6 @@
 # manifests/appdev.pp
 
-class iis::appdev {
+class iis_service::appdev {
   dism {'IIS-ApplicationDevelopment':
     ensure => present
   }
