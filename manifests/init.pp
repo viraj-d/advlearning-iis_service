@@ -46,7 +46,8 @@ class iis_service() {
   }
 
   # WCF
-  include progresso::iis::wcf
+  #include progresso::iis::wcf
+  inclued iis_service::wcf
   Dism['WAS-WindowsActivationService'] -> Class['iis_service::wcf']
 
 }
